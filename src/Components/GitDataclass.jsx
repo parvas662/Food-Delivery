@@ -1,8 +1,7 @@
 
 import React from 'react';
 
-class Userclass extends React.Component {
-
+class GitDataclass extends React.Component {
     constructor() {
         super()
         this.state = {   // all the state variables will stored in this object.
@@ -30,15 +29,16 @@ class Userclass extends React.Component {
         const { login, avatar_url } = this.state.username
         console.log(login)
         return (
-            <div>
-                <img src={avatar_url} alt="Profile_Picture" />
-                <h2>Name: {login} </h2>
-                <h4>Contact: parvassharma662@gmail.com</h4>
+            <div  className=" flex-col place-items-center p-4">
+                <h1 className="text-bold text-3xl mb-5">GitHub Profile</h1>
+                <img className='w-60 ' src={avatar_url} alt="Profile_Picture" />
+                <h2  className="my-2  text-bold">Name: {login} </h2>
+                <h4 className="my-2 "><b>Contact :</b> parvassharma662@gmail.com</h4>
             </div>
         )
     }
 }
-export default Userclass
+export default GitDataclass
 
 
 /****

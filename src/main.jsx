@@ -20,7 +20,6 @@ import Error from "./Components/Error";
 import Body from "./Components/Body.jsx";
 import Cart from "./Components/Cart.jsx";
 import RestaurantMenu from "./Components/bodyComponents/RestaurantMenu.jsx";
-
 // grocery component
 const Grocery = lazy(() => import("./Components/Grocery"))
 
@@ -32,10 +31,10 @@ createRoot(document.getElementById("root")).render(
         <Route path="about" element={<About />}> </Route>
         <Route path="contactus" element={<ContactUs />}> </Route>
         <Route path="grocery" element={
-          <Suspense fallback={<h1>Loading...</h1>}>  
-            <Grocery />  {/* if grocery component takes more time to load then suspense will load into dom*/}
-          </Suspense>
-        }> </Route>
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <Grocery />  {/* if grocery component takes more time to load then suspense will load into dom , here we can also render shimmer component*/}
+          </Suspense>}>  
+        </Route>
         <Route path="cart" element={<Cart />}> </Route>
         <Route path="*" element={<Error />}> </Route>   {/* when invalid url encounter this component will render */}
         <Route path="/restaurant/:resId" element={<RestaurantMenu />} />

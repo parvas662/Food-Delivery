@@ -1,9 +1,8 @@
-import Userclass from "./UserClass";
+import GitDataclass from "./GitDataclass";
 
 export default function About (){
-    return <>
-    <Userclass />
-        <h2>And i'm a Software Developer.</h2>
-        
-    </>
+    return <div>
+    <GitDataclass />
+        <h2 className="text-center">And i'm a Software Developer.</h2>
+    </div>
 }

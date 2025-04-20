@@ -13,10 +13,12 @@ export default function RestaurantMenu() {
     if (resMenu === null) return <Shimmer />
     const { name, avgRatingString, totalRatingsString, costForTwoMessage, cuisines, areaName, sla } = resMenu?.data?.cards[2]?.card?.card?.info
     //const items = resMenu?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards || resMenu?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards
-    const itemCategories = resMenu?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c) => {
+    const cardData = resMenu?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards || resMenu?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards 
+    const itemCategories = cardData.filter((c) => {
         return c?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     })
-
+   // console.log("resMenu",resMenu )
+   // console.log("itemCategories",itemCategories)
     return <>
         <div className="text-sm w-9/12 m-auto my-7 bg-gray-100 rounded-4xl shadow-gray-300 shadow-2xl p-4 flex-col ">
             <h1 className="text-3xl font-extrabold  my-3 ">{name}</h1>
@@ -36,8 +38,8 @@ export default function RestaurantMenu() {
             //  controlled component , here restaurantCategories is controlled by restaurantMenu
             return <RestaurantCategories
                 key={category.card?.card?.categoryId}
-                data={category.card?.card}
-                itemIndex={itemIndex == index ? true : false }
+                data={category.card?.card} 
+                itemIndex={itemIndex == index ? true : false }  // this state will control the acordian with their index.
                 setitemIndex={() => setitemIndex(index )}  
             />
         })}

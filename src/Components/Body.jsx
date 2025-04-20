@@ -18,14 +18,16 @@ export default function Body() {
 
     const fetchData = async () => {
       try {
-        const data = await fetch("https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=12.9715987&lng=77.5945627&carousel=true&third_party_vendor=1");
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
+        console.log(json)
         // console.log(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants)
         // optional chaining = (question mark thing) 
         setresList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
         setfilteredList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
       }
       catch (e) {
+        console.log("hii im error")
         console.log(e)
       }
   }
@@ -36,8 +38,8 @@ export default function Body() {
       <h1> Looks like you're offline!! Please check your internet connection</h1>
     </>
   }
-
-  if (resList.length === 0) {
+  console.log(resList)
+  if ( resList.length == 0) {
     return <Shimmer />
   }
 
@@ -55,10 +57,11 @@ export default function Body() {
           <button className="px-4 py-1 bg-green-800 text-white rounded-lg"
             onClick={() => {
               //Filter the restaurant cards and update the UI  
-              const filtered = resList.filter((res) => {
-                return res.info.name.toLowerCase().includes(searchText.toLowerCase())
-              })
-              return setfilteredList(filtered)
+              const filtered = resList.filter((res) =>
+                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
+
+              )
+              setfilteredList(filtered)
 
             }}>  Search  </button>
 
