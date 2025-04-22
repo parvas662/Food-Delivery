@@ -1,6 +1,15 @@
 import { IMAGE_URL } from "../../utlils/constants"
+import { useDispatch } from "react-redux";
+import { addItems } from "../../utlils/reduxSlice.js/cartSlice";
+
 
 const ItemList = ({ items }) => {
+    const dispatch = useDispatch();
+    const handleADDitem = (item) => {
+        // dispatch an action.
+        dispatch(addItems(item)) 
+    }
+    // console.log(items)
     return (
         <div className="w-full m-auto bg-gray-50  p-4 flex-col ">
             {items.map((item) => (
@@ -14,12 +23,13 @@ const ItemList = ({ items }) => {
                         <span className="block w-auto  font-extralight text-sm text-wrap ">{item.card?.info?.description}</span>
                     </div>
 
+                    <div className=" py-2 relative  ">
+                        <img className=" w-53 h-45 rounded-xl bg-gray-50 " src={IMAGE_URL + item.card?.info?.imageId} alt={item.card?.info?.name} />
+                        <button className="w-32 p-2  absolute top-[80%] left-[20%]  text-green-600 rounded-xl cursor-pointer bg-gray-50 hover:bg-gray-300 shadow-lg "
+                            onClick={() => { handleADDitem(item) }}
+                        >  ADD </button>
+                    </div>
 
-                        <div className=" py-2 relative  ">
-                            <img className=" w-53 h-45 rounded-xl bg-gray-50 " src={IMAGE_URL + item.card?.info?.imageId} alt={item.card?.info?.name} />
-                            <button className="w-32 p-2  absolute top-[80%] left-[20%]  text-green-600 rounded-xl cursor-pointer bg-gray-50 hover:bg-gray-300 shadow-lg "> ADD </button>
-                        </div>
- 
                 </div>
             ))}
 

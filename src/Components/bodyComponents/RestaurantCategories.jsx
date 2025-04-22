@@ -24,7 +24,6 @@ function RestaurantCategories({ data, itemIndex,setitemIndex}) {
             </div>
         </div>
     )
-
 }
 
 
