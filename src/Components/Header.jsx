@@ -10,19 +10,21 @@ export default function Header() {
   const cartItem = useSelector((store)=>  store.cart.items)  
 
   return (
-    <div style={{backgroundColor : 'rgb(255, 82, 0)' }}>
-      <div className="flex justify-between shadow-lg w-full p-4" >
+    <div className="bg-white sticky top-0 z-2">
+      <div className="flex justify-between shadow-lg w-full text-sm  px-10" >
         <div className="w-25">
-          <img className="" src={LOGO_URL} alt="Food logo" />
+          <Link to={"/"}> 
+            <img className="" src={LOGO_URL} alt="Food logo" />
+          </Link> 
         </div>
 
         <div className="flex justify-center items-center px-4">
-          <ul className="flex  gap-10 ">
+          <ul className="flex  gap-7 ">
             <li>
               Online Status: { onlineStatus ? "🟢" : "🔴" }
             </li>
             <li>
-              <Link to={"/"}>Home</Link>
+              <Link to={"/"}> Home</Link>
             </li>
             <li>
               <Link to={"/about"}>About us</Link>
@@ -33,7 +35,7 @@ export default function Header() {
             <li>
               <Link to={"/grocery"}>Grocery</Link>
             </li>
-            <li className="text-xl font-bold ">  
+            <li className=" font-bold ">  
               <Link to={"/cart"} >Cart ({cartItem.length} items)</Link>
             </li>  
             <button className="login-btn" onClick={() => {

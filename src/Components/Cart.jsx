@@ -1,13 +1,18 @@
 import { useDispatch, useSelector } from "react-redux"
 import ItemList from "./bodyComponents/ItemList"
 import { clearCart } from "../utlils/reduxSlice.js/cartSlice";
+import EmptyCart from "./lottiefiles/EmptyCart.jsx";
 
 export default function Cart(){
-
     const cartItem = useSelector((store) => store.cart.items) 
     const dispatch = useDispatch(); 
     const handleClearCart = ()=>{
         dispatch(clearCart())
+    }
+    if (cartItem.length == 0){
+       return ( 
+        <EmptyCart/> 
+       )
     }
     return (
     <div className="w-8/12 m-auto">

@@ -28,13 +28,13 @@ class GitDataclass extends React.Component {
         console.log(this.state.username)
         const { login, avatar_url } = this.state.username
         console.log(login)
-        return (
-            <div  className=" flex-col place-items-center p-4">
-                <h1 className="text-bold text-3xl mb-5">GitHub Profile</h1>
+        return ( 
+            <div  className=" flex-col px-14">
+                <h1 className="text-bold text-2xl text-blue-600  mb-2">GitHub Profile</h1>
                 <img className='w-60 ' src={avatar_url} alt="Profile_Picture" />
                 <h2  className="my-2  text-bold">Name: {login} </h2>
                 <h4 className="my-2 "><b>Contact :</b> parvassharma662@gmail.com</h4>
-            </div>
+            </div> 
         )
     }
 }
