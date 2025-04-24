@@ -1,9 +1,9 @@
 export default function Footer() {
     return (
-      <footer className="bg-gray-900 text-white py-10 px-6 mt-10">
+      <footer className="bg-gray-900 text-white py-10 px-6 mt-10 ">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
   
-          {/* Company Info */}
+          {/* >>>Company Info<<< */}
           <div>
             <h3 className="font-bold text-lg mb-3">Company</h3>
             <ul className="space-y-2">
@@ -13,7 +13,7 @@ export default function Footer() {
             </ul>
           </div>
   
-          {/* Useful Links */}
+          {/* >>>Useful Links<<< */}
           <div>
             <h3 className="font-bold text-lg mb-3">Quick Links</h3>
             <ul className="space-y-2">
@@ -22,7 +22,7 @@ export default function Footer() {
             </ul>
           </div>
   
-          {/* Help & Support */}
+          {/* >>>Help & Support<<< */}
           <div>
             <h3 className="font-bold text-lg mb-3">Support</h3>
             <ul className="space-y-2">
@@ -32,7 +32,7 @@ export default function Footer() {
             </ul>
           </div>
   
-          {/* Social Media */}
+          {/* >>>Social Media<<< */}
           <div>
             <h3 className="font-bold text-lg mb-3">Follow Us</h3>
             <div className="flex gap-4">
@@ -44,7 +44,7 @@ export default function Footer() {
   
         </div>
   
-        {/* Copyright */}
+        {/* >>>Copyright<<< */}
         <div className="text-center text-sm mt-6 text-gray-400">
           © 2025 FoodDelivery. All rights reserved.
         </div>

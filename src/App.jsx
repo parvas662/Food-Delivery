@@ -13,8 +13,10 @@ function App() {
         <Header />
         {/** if my path = "/" body component will load in this outlet */}
         {/** if my path = "/about" about component will load  in this outlet*/}
-        <Outlet /> 
-        <Footer />
+        <div className="w-full h-max">
+          <Outlet /> 
+        </div>
+          <Footer />
 
       </Provider> 
     </div>
