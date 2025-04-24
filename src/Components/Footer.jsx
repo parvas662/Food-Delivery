@@ -40,8 +40,10 @@ export default function Footer() {
               <a href="https://instagram.com/parvas_sharma" target="_blank"  className="hover:underline">Instagram</a>
               <a href="https://github.com/parvas662" target="_blank"  className="hover:underline">GitHub</a>
             </div>
+            
           </div>
-  
+
+
         </div>
   
         {/* >>>Copyright<<< */}

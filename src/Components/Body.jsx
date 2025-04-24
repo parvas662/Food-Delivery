@@ -28,10 +28,11 @@ export default function Body() {
       // optional chaining = (question mark thing) 
       setresList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
       setfilteredList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+      
     }
-    catch (e) {
-      console.log("hii im error")
-      console.log(e)
+    catch (e) {  
+      alert("CORS Blocked\n\nTo view live restaurant data, please install the CORS extension for your browser\n\nAfter installing, enable the extension and refresh this page.");
+        
     }
   }
   const onlineStatus = useOnlineStatus();

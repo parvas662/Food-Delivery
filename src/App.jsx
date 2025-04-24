@@ -8,7 +8,8 @@ import appStore from "./utlils/appStore";
 
 function App() {
   return (
-    <div className="app h-full w-full" > 
+    <div className="app h-full w-full" >
+      
       <Provider store={appStore}> 
         <Header />
         {/** if my path = "/" body component will load in this outlet */}
