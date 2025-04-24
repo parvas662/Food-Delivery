@@ -3,19 +3,20 @@ import Footer from "./Components/Footer"
 import "./index.css"
 import { Outlet } from "react-router-dom";
 import { Provider } from "react-redux";
-import appStore from "./utlils/appStore";
+import appStore from "./utlils/appStore";  
+   
 
 function App() {
   return (
-    <div className="app" >
+    <div className="app h-full w-full" > 
       <Provider store={appStore}> 
         <Header />
         {/** if my path = "/" body component will load in this outlet */}
         {/** if my path = "/about" about component will load  in this outlet*/}
-        <Outlet />
+        <Outlet /> 
         <Footer />
 
-      </Provider>
+      </Provider> 
     </div>
   )
 }

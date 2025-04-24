@@ -15,8 +15,7 @@ root.render(heading);
 
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import About from "./Components/About.jsx";
-import ContactUs from "./Components/ContactUs";
-import Error from "./Components/Error";
+import ContactUs from "./Components/ContactUs"; 
 import Body from "./Components/Body.jsx";
 import Cart from "./Components/Cart.jsx";
 import RestaurantMenu from "./Components/bodyComponents/RestaurantMenu.jsx";
@@ -32,7 +31,7 @@ createRoot(document.getElementById("root")).render(
       <Route path="/" element={<App />}>
         <Route path="/" element={<Body />}> </Route>
         <Route path="about" element={<About />}> </Route>
-        <Route path="contactus" element={<ContactUs />}> </Route>
+        <Route path="contactus" element={<ContactUs />}> </Route> 
         <Route path="grocery" element={
           <Suspense fallback={<Loading/>}>
             <Grocery />  {/* if grocery component takes more time to load then suspense will load into dom , here we can also render shimmer component*/}
